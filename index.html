@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+  <link rel="stylesheet" href="./recursos/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body class="contenedor">
+
+  <header class="encabezado">
+    <h1>Encriptador de texto</h1>
+  </header>
+
+  <div class="box0">
+    <legend>Mensaje</legend>
+    <input type="text" id="caja1" class="textbox" placeholder="Escribe tu mensaje aqui|">
+  <div class="contenido1">
+    <button class="button" id="boton1">Encriptar</button>
+    <button class="button" id ="boton2">Desencriptar</button>
+  </div>
+  <p class="alerta"><img src="./recursos/advertencia.png" alt="icon"> Solo letras minúsculas y sin acentos</p>
+  </div>
+
+  <div class="box1">
+      <legend>Resultado</legend>
+      <textarea class="textbox" placeholder="\>.." id="caja2" disabled></textarea>
+      <div class="contenido1">
+        <button class="button" id="boton3">Copiar</button>
+      </div>
+  </div>
+
+    <svg width="0" height="0" class="hidden">
+      <filter id="noise">
+          <feTurbulence id="turbulence">
+              <animate attributeName="baseFrequency" dur="10s" values="0.01
+              0.01;0.2 0.2;0.01 0.01;" repeatCount="indefinite"></animate>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" scale="3.1"></feDisplacementMap>
+      </filter>
+    </svg>
+<script>
+ const input = document.getElementById('caja1');
+
+  setInterval(() => {
+    if (input.placeholder === 'Escribe tu mensaje aqui|') {
+      input.placeholder = 'Escribe tu mensaje aqui ';
+    } else {
+      input.placeholder = 'Escribe tu mensaje aqui|';
+    }
+  }, 500);
+  
+</script>
+<script src="./recursos/encriptar.js"></script>
+<footer>
+  <p>| Grupo 4 | Encriptador v1.4.0 by luis200hr</p>
+</footer>
+</body>
+</html> 
