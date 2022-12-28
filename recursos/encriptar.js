@@ -3,8 +3,21 @@ const textarea = document.getElementById("caja2");
 let boton0 = document.getElementById("boton1");
 let boton_1 = document.getElementById("boton2");
 let boton_2 = document.getElementById("boton3");
+const errorMessage = document.getElementById('error-message');
+
+input.addEventListener('input', () => {
+  if (!input.validity.valid) {
+    input.value = input.value.replace(/[^a-z]/g, '');
+    caja2.value = "solo minusculas y sin acentos por favor"
+  }
+  else{
+    caja2.value = ""
+  }
+});
 
 boton0.addEventListener("click", function() {
+
+    
     let items = [];
     items.push(caja1.value);
     console.log(items);
