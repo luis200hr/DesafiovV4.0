@@ -7,7 +7,7 @@ const errorMessage = document.getElementById('error-message');
 
 input.addEventListener('input', () => {
   if (!input.validity.valid) {
-    input.value = input.value.replace(/[^a-z]/g, '');
+    input.value = input.value.replace(/[A-Z]/g, '');
     caja2.value = "solo minusculas y sin acentos por favor"
   }
   else{
