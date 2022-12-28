@@ -2,13 +2,13 @@
     box-sizing: border-box;
     font-family: 'helvetica neue';
     font-size: 20px;
+    height: -webkit-fill-available;
     font-weight: 200;
   }
   
   body {
     margin: 0;
-    background: url(./fondo3.png);
-    background-size: cover;
+
   }
   /*Cuerpo*/
   header {
@@ -21,6 +21,9 @@
   }
   .hidden{
     display: none;
+  }
+  p{
+    color: rgb(251, 251, 251);
   }
   h1 {
     color: white;
@@ -37,7 +40,7 @@
   .box0 {
     grid-area: box0;
     width: 50%; /* Ocupa la mitad del ancho de la página */
-    height: 570px; /* Altura de 200px */
+    height: 510px; /* Altura de 200px */
     float: left;
     padding: 20px;
     box-sizing: border-box; 
@@ -45,7 +48,7 @@
   .box1 {
     grid-area: box1;
     width: 50%; /* Ocupa la mitad del ancho de la página */
-    height: 570px; /* Altura de 200px */
+    height: 510px; /* Altura de 200px */
     float: left;
     padding: 20px;
     align-content: space-around;
@@ -59,11 +62,13 @@
   }
   .alerta{
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(10, 7, 203, 0.945);
   }
 
   input, textarea{
     display: flex; /*Quito el display block del input */
-    color: rgb(159,248, 25);
+    color: rgb(175 255 250);
+    text-shadow: 1px 1px 2px rgb(155, 123, 167), 0 0 1em rgb(155, 124, 167), 0 0 0.2em rgb(158, 124, 167);
     font-family: VT323;
     font-size: 28px;
   }
@@ -76,7 +81,8 @@
   input::placeholder, textarea::placeholder{
     font-size: 28px;
     font-family: VT323;
-    color: rgb(159,248, 25);
+    color: rgb(175 255 250);
+    text-shadow: 1px 1px 2px rgb(155, 123, 167), 0 0 1em rgb(155, 124, 167), 0 0 0.2em rgb(158, 124, 167);
   }
 
   .textbox {
@@ -84,12 +90,12 @@
     box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 1);
     display: flex;
     border-radius: 40px;
-    background: repeating-linear-gradient( #111, #111 50%, green 50%, #050505);
+    background: repeating-linear-gradient( #000, #170b29 50%, #451383 50%, #270133);
     background-size: 5px 5px;
     filter: url(#noise);
     margin: 0 auto;    
-    width: 60%; /* Ocupa el ancho completo del elemento padre */
-    height: 50%; /* Ocupa la altura completa del elemento padre */
+    width: 55%; /* Ocupa el ancho completo del elemento padre */
+    height: 55%; /* Ocupa la altura completa del elemento padre */
   }
   .button{
     margin: 10px;
@@ -104,6 +110,31 @@
   .encabezado{
     grid-area: header;
   }
+  .contenedor{
+    position: relative;
+    /*z-index: 99;*/
+    z-index: 99;
+  }
+  .capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3d3a5a;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    z-index: -1;
+  }
+  video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
   footer {
     font-family: monospace;
     font-weight: bold;
@@ -112,9 +143,6 @@
     margin-bottom: 10px;
     width: 100%;
     color: rgb(0, 0, 0);
-}
-p{
-  text-shadow: 1px 2px 0 rgb(0 0 0 / 20%);
 }
 
   @media screen and (max-width: 600px) {
