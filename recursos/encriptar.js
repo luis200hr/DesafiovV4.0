@@ -65,6 +65,9 @@ boton_2.addEventListener("click", function(){
   Porque al usar document.execCommand("") no me funcionaba en mi navegador y
   el visual code me subrayaba la palabra "execCommand" indicando que habia algo
   malo xd*/
+  if (caja2.value != ""){
+    caja2.value = "¡Mensaje copiado!"
+  }
   navigator.clipboard.writeText(textarea.value);
   
 });
